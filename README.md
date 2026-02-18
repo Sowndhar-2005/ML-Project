@@ -1,26 +1,26 @@
-﻿# ≡ƒöì Text-Based Drug Trafficking Detection System
+# 🔍 Text-Based Drug Trafficking Detection System
 
-An NLP-based machine learning system that analyzes text messages and classifies them as **Drug Trafficking (Illicit)** or **Safe (Normal)** using Natural Language Processing and Naive Bayes classification. Includes **emoji-coded message detection** ΓÇö identifying drug emojis like ≡ƒìâ≡ƒÆèΓ¥ä∩╕Å≡ƒìä≡ƒÆë used as code on social media.
+An NLP-based machine learning system that analyzes text messages and classifies them as **Drug Trafficking (Illicit)** or **Safe (Normal)** using Natural Language Processing and Naive Bayes classification. Includes **emoji-coded message detection** — identifying drug emojis like 🍃💊❄️🍄💉 used as code on social media.
 
 ---
 
-## ≡ƒôî About the Project
+## 📌 About the Project
 
-This project detects potential drug trafficking activity from plain text ΓÇö such as social media posts, chat messages, or online listings. It uses a **Multinomial Naive Bayes** classifier trained on text data to identify suspicious language patterns commonly associated with illegal drug trade.
+This project detects potential drug trafficking activity from plain text — such as social media posts, chat messages, or online listings. It uses a **Multinomial Naive Bayes** classifier trained on text data to identify suspicious language patterns commonly associated with illegal drug trade.
 
-> **≡ƒåò Emoji Detection:** The model now recognizes emoji-coded drug messages ΓÇö a common real-world tactic where dealers use emojis like ≡ƒìâ (marijuana), ≡ƒÆè (pills), Γ¥ä∩╕Å (cocaine), ≡ƒìä (mushrooms), and ≡ƒöî (dealer/plug) to evade text-based filters.
+> **🆕 Emoji Detection:** The model now recognizes emoji-coded drug messages — a common real-world tactic where dealers use emojis like 🍃 (marijuana), 💊 (pills), ❄️ (cocaine), 🍄 (mushrooms), and 🔌 (dealer/plug) to evade text-based filters.
 
 ### How It Works
 
 ```
-User Input Text ΓåÆ Lowercase Preprocessing ΓåÆ Bag of Words Vectorization ΓåÆ Naive Bayes Classifier ΓåÆ Prediction (Yes/No)
+User Input Text → Lowercase Preprocessing → Bag of Words Vectorization → Naive Bayes Classifier → Prediction (Yes/No)
 ```
 
-1. **Text Preprocessing** ΓÇö Converts input text to lowercase for uniformity.
-2. **Feature Extraction** ΓÇö Uses `CountVectorizer` (Bag of Words) to convert text into numerical feature vectors.
-3. **Emoji Recognition** ΓÇö Detects drug-code emojis (≡ƒìâ≡ƒÆèΓ¥ä∩╕Å≡ƒìä≡ƒÆë≡ƒöî≡ƒöÑ) as features alongside regular text.
-4. **Classification** ΓÇö A trained `MultinomialNB` model predicts whether the text is drug-related or safe.
-5. **Output** ΓÇö Returns the prediction (Yes/No) along with a confidence percentage.
+1. **Text Preprocessing** — Converts input text to lowercase for uniformity.
+2. **Feature Extraction** — Uses `CountVectorizer` (Bag of Words) to convert text into numerical feature vectors.
+3. **Emoji Recognition** — Detects drug-code emojis (🍃💊❄️🍄💉🔌🔥) as features alongside regular text.
+4. **Classification** — A trained `MultinomialNB` model predicts whether the text is drug-related or safe.
+5. **Output** — Returns the prediction (Yes/No) along with a confidence percentage.
 
 ### Labels
 
@@ -31,20 +31,20 @@ User Input Text ΓåÆ Lowercase Preprocessing ΓåÆ Bag of Words Vectorization
 
 ---
 
-## ≡ƒôü Project Structure
+## 📁 Project Structure
 
 ```
 Ml-Project/
-Γöé
-Γö£ΓöÇΓöÇ setup_dataset.py    ΓåÆ Generates synthetic training dataset
-Γö£ΓöÇΓöÇ train_model.py      ΓåÆ Trains the ML model and evaluates accuracy
-Γö£ΓöÇΓöÇ app.py              ΓåÆ Interactive CLI app to test predictions
-Γöé
-Γö£ΓöÇΓöÇ dataset.csv         ΓåÆ Dataset with text, emoji, and labels (600 rows)
-Γö£ΓöÇΓöÇ text_model.pkl      ΓåÆ Saved trained Naive Bayes model
-Γö£ΓöÇΓöÇ vectorizer.pkl      ΓåÆ Saved fitted CountVectorizer
-Γöé
-ΓööΓöÇΓöÇ Readme.md           ΓåÆ Project documentation
+│
+├── setup_dataset.py    → Generates synthetic training dataset
+├── train_model.py      → Trains the ML model and evaluates accuracy
+├── app.py              → Interactive CLI app to test predictions
+│
+├── dataset.csv         → Dataset with text, emoji, and labels (600 rows)
+├── text_model.pkl      → Saved trained Naive Bayes model
+├── vectorizer.pkl      → Saved fitted CountVectorizer
+│
+└── Readme.md           → Project documentation
 ```
 
 ### File Descriptions
@@ -54,13 +54,13 @@ Ml-Project/
 | `setup_dataset.py` | Creates a synthetic `dataset.csv` with labeled text samples          |
 | `train_model.py`   | Loads the dataset, trains the model, prints accuracy, saves `.pkl`   |
 | `app.py`           | Loads saved model and lets you type text to get real-time predictions |
-| `dataset.csv`      | Training data ΓÇö 300 drug-related + 300 safe text samples (incl. emoji) |
+| `dataset.csv`      | Training data — 300 drug-related + 300 safe text samples (incl. emoji) |
 | `text_model.pkl`   | Serialized trained model (auto-generated by `train_model.py`)        |
 | `vectorizer.pkl`   | Serialized vectorizer (auto-generated by `train_model.py`)           |
 
 ---
 
-## ≡ƒÜÇ How to Run
+## 🚀 How to Run
 
 ### Prerequisites
 
@@ -96,7 +96,7 @@ python train_model.py
 ```
 Loaded dataset: 600 rows, 2 columns
 
-Split ΓåÆ Train: 480  |  Test: 120
+Split → Train: 480  |  Test: 120
 
 ==================================================
   Accuracy: 98.33%
@@ -113,8 +113,8 @@ Drug Trafficking (1)       0.97      1.00      0.98        60
            macro avg       0.98      0.98      0.98       120
         weighted avg       0.98      0.98      0.98       120
 
-Model saved      ΓåÆ text_model.pkl
-Vectorizer saved  ΓåÆ vectorizer.pkl
+Model saved      → text_model.pkl
+Vectorizer saved  → vectorizer.pkl
 ```
 
 ### Step 4: Test with Interactive App
@@ -136,8 +136,8 @@ Enter text to analyze (or 'quit' to exit):
 
    Input      : selling premium powder, fast delivery guaranteed
    Confidence : 99.87%
-   Result     : YES ΓÇö Drug Trafficking Detected
-   Status     : ILLICIT ΓÇö Flagged as drug-related.
+   Result     : YES — Drug Trafficking Detected
+   Status     : ILLICIT — Flagged as drug-related.
 
 ------------------------------------------------------------
 Enter text to analyze (or 'quit' to exit):
@@ -145,13 +145,13 @@ Enter text to analyze (or 'quit' to exit):
 
    Input      : looking for study partners for math exam next week
    Confidence : 99.92%
-   Result     : NO ΓÇö Safe Text
-   Status     : SAFE ΓÇö This text appears normal.
+   Result     : NO — Safe Text
+   Status     : SAFE — This text appears normal.
 ```
 
 ---
 
-## ≡ƒ¢á Tech Stack
+## 🛠 Tech Stack
 
 | Component        | Technology                          |
 |------------------|-------------------------------------|
@@ -165,7 +165,7 @@ Enter text to analyze (or 'quit' to exit):
 
 ---
 
-## ≡ƒôè Model Performance
+## 📊 Model Performance
 
 | Metric              | Score    |
 |----------------------|----------|
@@ -178,9 +178,9 @@ Enter text to analyze (or 'quit' to exit):
 
 ---
 
-## ≡ƒô¥ Dataset Sample
+## 📝 Dataset Sample
 
-### Drug Trafficking ΓÇö Text (label = 1)
+### Drug Trafficking — Text (label = 1)
 | Text |
 |------|
 | Got powder available for pickup, DM for prices |
@@ -188,14 +188,14 @@ Enter text to analyze (or 'quit' to exit):
 | Moving pills across the border this weekend |
 | Fresh batch of white just arrived, hit me up |
 
-### Drug Trafficking ΓÇö Emoji-Coded (label = 1)
+### Drug Trafficking — Emoji-Coded (label = 1)
 | Text |
 |------|
-| Got that ≡ƒìâ≡ƒìâ≡ƒìâ ready, DM me for prices |
-| ≡ƒöî got the best Γ¥ä∩╕Å in town, hit me up |
-| Fresh ≡ƒÆè≡ƒÆè just landed, first come first served |
-| ≡ƒöÑ≡ƒöÑ≡ƒöÑ quality Γ¥ä∩╕Å available, fast delivery ΓÜí |
-| Who got the ≡ƒìä≡ƒìä? Need a plug ASAP ≡ƒöî |
+| Got that 🍃🍃🍃 ready, DM me for prices |
+| 🔌 got the best ❄️ in town, hit me up |
+| Fresh 💊💊 just landed, first come first served |
+| 🔥🔥🔥 quality ❄️ available, fast delivery ⚡ |
+| Who got the 🍄🍄? Need a plug ASAP 🔌 |
 
 ### Safe / Normal (label = 0)
 | Text |
@@ -204,31 +204,31 @@ Enter text to analyze (or 'quit' to exit):
 | Had an amazing pizza at the new cafe downtown |
 | Looking for study partners for math exam next week |
 | Going to the park this weekend with family |
-| Had an amazing day at the park ≡ƒî│ΓÿÇ∩╕Å≡ƒÿè |
-| Happy birthday to my best friend ≡ƒÄé≡ƒÄë≡ƒÄê |
-| Beautiful sunset at the beach today ≡ƒîà≡ƒÅû∩╕Å≡ƒÿì |
+| Had an amazing day at the park 🌳☀️😊 |
+| Happy birthday to my best friend 🎂🎉🎈 |
+| Beautiful sunset at the beach today 🌅🏖️😍 |
 
-### ≡ƒöñ Emoji Code Reference
+### 🔤 Emoji Code Reference
 
 Common emojis used as drug codes on social media:
 
 | Emoji | Drug Code Meaning |
 |-------|-------------------|
-| ≡ƒìâ≡ƒî┐ | Marijuana / Weed |
-| Γ¥ä∩╕Å | Cocaine |
-| ≡ƒÆè | Pills / MDMA / Xanax |
-| ≡ƒìä | Mushrooms / Psychedelics |
-| ≡ƒÆë | Heroin / Injectables |
-| ≡ƒöî | Plug / Dealer |
-| ≡ƒôª | Package / Shipment |
-| ≡ƒÆ░≡ƒÆ╡ | Money / Payment |
-| ≡ƒöÑ | High Quality |
-| ΓÜí | Fast Delivery |
-| ≡ƒñ½ | Secrecy / Discreet |
+| 🍃🌿 | Marijuana / Weed |
+| ❄️ | Cocaine |
+| 💊 | Pills / MDMA / Xanax |
+| 🍄 | Mushrooms / Psychedelics |
+| 💉 | Heroin / Injectables |
+| 🔌 | Plug / Dealer |
+| 📦 | Package / Shipment |
+| 💰💵 | Money / Payment |
+| 🔥 | High Quality |
+| ⚡ | Fast Delivery |
+| 🤫 | Secrecy / Discreet |
 
 ---
 
-## ΓÜÖ∩╕Å Quick Start (All Commands)
+## ⚙️ Quick Start (All Commands)
 
 ```bash
 # 1. Install dependencies
